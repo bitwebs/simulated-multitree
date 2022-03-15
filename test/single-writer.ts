@@ -1,9 +1,9 @@
 import ava from 'ava'
 import concat from 'concat-stream'
-import { SimulatedAutobee, SimulatedOplog } from '../src/index.js'
+import { SimulatedMultitree, SimulatedOplog } from '../src/index.js'
 
 ava('single writer: get, createReadStream, put, del', async t => {
-  const db = new SimulatedAutobee()
+  const db = new SimulatedMultitree()
   db.addWriter(new SimulatedOplog())
 
   for (let i = 0; i < 10; i++) {

@@ -46,7 +46,7 @@ export interface SimulatedOplogIface extends EventEmitter {
   get (seq: number): Promise<SimulatedOp|undefined>
 }
 
-export class SimulatedAutobee {
+export class SimulatedMultitree {
   length = 0
   key = crypto.randomBytes(32)
   writers: SimulatedOplogIface[] = []
@@ -192,12 +192,12 @@ export class SimulatedAutobee {
   }
 
   sub (prefix: string) {
-    return new SimulatedAutobeeSub(this, prefix)
+    return new SimulatedMultitreeSub(this, prefix)
   }
 }
 
-export class SimulatedAutobeeSub {
-  constructor (public db: SimulatedAutobee, public prefix: string) {
+export class SimulatedMultitreeSub {
+  constructor (public db: SimulatedMultitree, public prefix: string) {
   }
 
   get (key: string, opts?: GetOpts) {

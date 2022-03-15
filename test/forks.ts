@@ -1,12 +1,12 @@
 import ava from 'ava'
-import { SimulatedAutobee, SimulatedOplog, SimulatedRemoteOplog } from '../src/index.js'
+import { SimulatedMultitree, SimulatedOplog, SimulatedRemoteOplog } from '../src/index.js'
 
 import { inspect } from 'util'
 
 ava('dual remote writers: get, createReadStream, put, del', async t => {
-  const db1 = new SimulatedAutobee()
+  const db1 = new SimulatedMultitree()
   db1.addWriter(new SimulatedOplog())
-  const db2 = new SimulatedAutobee()
+  const db2 = new SimulatedMultitree()
   db2.addWriter(new SimulatedOplog())
   const dbs = [db1, db2]
 

@@ -1,7 +1,7 @@
 {
-  "name": "pauls-simulated-autobee",
-  "version": "1.1.1",
-  "description": "An in-memory simulated autobee for testing",
+  "name": "simulated-multitree",
+  "version": "1.0.0",
+  "description": "An in-memory simulated MultiTree for testing",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pfrazee/simulated-autobee.git"
+    "url": "git+https://github.com/bitwebs/simulated-multitree.git"
   },
   "author": "Paul Frazee <pfrazee@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pfrazee/simulated-autobee/issues"
+    "url": "https://github.com/bitwebs/simulated-multitree/issues"
   },
-  "homepage": "https://github.com/pfrazee/simulated-autobee#readme",
+  "homepage": "https://github.com/bitwebs/simulated-multitree#readme",
   "devDependencies": {
     "@types/concat-stream": "^1.6.1",
     "ava": "^3.15.0",

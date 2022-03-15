@@ -1,11 +1,11 @@
 import ava from 'ava'
 import concat from 'concat-stream'
-import { SimulatedAutobee, SimulatedOplog, SimulatedRemoteOplog } from '../src/index.js'
+import { SimulatedMultitree, SimulatedOplog, SimulatedRemoteOplog } from '../src/index.js'
 
 ava('dual remote writers: get, createReadStream, put, del', async t => {
-  const db1 = new SimulatedAutobee()
+  const db1 = new SimulatedMultitree()
   db1.addWriter(new SimulatedOplog())
-  const db2 = new SimulatedAutobee()
+  const db2 = new SimulatedMultitree()
   db2.addWriter(new SimulatedOplog())
 
   db1.addWriter(new SimulatedRemoteOplog(db2.writers[0] as SimulatedOplog))
